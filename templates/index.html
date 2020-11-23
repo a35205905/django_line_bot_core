@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>寵物交友首頁</title>
+</head>
+<body>
+    <div>
+        <p>使用者ID: <span id="user_id"></span></p>
+        <p>群組ID: <span id="group_id"></span></p>
+    </div>
+    <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
+    <script>
+        const liff_id = '1655260637-Dlg2wBRp';
+        liff.init({
+            liffId: liff_id
+        }).then(function(){
+            document.getElementById('user_id').innerText = liff.getContext().userId;
+            document.getElementById('group_id').innerText = liff.getContext().groupId;
+        }).catch(function(error){
+            console.log(error);
+        });
+    </script>
+</body>
+</html>
